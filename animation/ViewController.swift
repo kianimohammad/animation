@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func play(_ sender: UIButton) {
+        /*
         if isAnimating {
             timer.invalidate()
             playBtn.setTitle("Play", for: [])
@@ -59,6 +60,30 @@ class ViewController: UIViewController {
             playBtn.setTitle("Stop", for: [])
             isAnimating = true
         }
+         */
+        
+        // the other way to animate images
+        imageView.animationImages = [
+            UIImage(named: "frame_0_delay-0.1s.gif")!,
+            UIImage(named: "frame_1_delay-0.1s.gif")!,
+            UIImage(named: "frame_2_delay-0.1s.gif")!,
+            UIImage(named: "frame_3_delay-0.1s.gif")!,
+            UIImage(named: "frame_4_delay-0.1s.gif")!,
+            UIImage(named: "frame_5_delay-0.1s.gif")!
+        ]
+        imageView.animationDuration = 1
+        // infinite loop
+        imageView.animationRepeatCount = 0
+        if isAnimating {
+            imageView.stopAnimating()
+            playBtn.setTitle("Play", for: [])
+            isAnimating = false
+        } else {
+            imageView.startAnimating()
+            playBtn.setTitle("Stop", for: [])
+            isAnimating = true
+        }
+        
         
     }
     
