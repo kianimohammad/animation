@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,73 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="animation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame_0_delay-0.1s.gif" translatesAutoresizingMaskIntoConstraints="NO" id="5i7-q3-nj1">
+                                <rect key="frame" x="16" y="233" width="343" height="201"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="sG8-Hh-iBG">
+                                <rect key="frame" x="10" y="454" width="355" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-Iv-xSl">
+                                        <rect key="frame" x="0.0" y="0.0" width="83" height="30"/>
+                                        <state key="normal" title="fadeIn"/>
+                                        <connections>
+                                            <action selector="fadeIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0BQ-5O-Slb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5P-9V-lDz">
+                                        <rect key="frame" x="136" y="0.0" width="83" height="30"/>
+                                        <state key="normal" title="slideIn"/>
+                                        <connections>
+                                            <action selector="slideIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aBr-OX-8F2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcO-Jm-BuJ">
+                                        <rect key="frame" x="272" y="0.0" width="83" height="30"/>
+                                        <state key="normal" title="grow"/>
+                                        <connections>
+                                            <action selector="grow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gx2-EB-tPR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGw-L5-sKS">
+                                <rect key="frame" x="172.5" y="178" width="30" height="30"/>
+                                <state key="normal" title="play"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2n7-wX-QYj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5i7-q3-nj1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B8e-Yp-t1H"/>
+                            <constraint firstItem="5i7-q3-nj1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LtL-dk-3GR"/>
+                            <constraint firstItem="vGw-L5-sKS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tu6-oG-Sso"/>
+                            <constraint firstItem="5i7-q3-nj1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Wsm-hB-R9l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sG8-Hh-iBG" secondAttribute="trailing" constant="10" id="csp-BG-KMz"/>
+                            <constraint firstItem="5i7-q3-nj1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="233" id="fh6-n5-pu8"/>
+                            <constraint firstItem="5i7-q3-nj1" firstAttribute="top" secondItem="vGw-L5-sKS" secondAttribute="bottom" constant="25" id="flH-Yj-G5O"/>
+                            <constraint firstItem="sG8-Hh-iBG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="jNj-YH-07w"/>
+                            <constraint firstItem="sG8-Hh-iBG" firstAttribute="top" secondItem="5i7-q3-nj1" secondAttribute="bottom" constant="20" id="jxd-A1-826"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="5i7-q3-nj1" id="5ih-74-Dp2"/>
+                        <outlet property="playBtn" destination="vGw-L5-sKS" id="1qC-ek-9pU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-58.399999999999999" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="frame_0_delay-0.1s.gif" width="374" height="277"/>
+    </resources>
 </document>
